@@ -3,29 +3,50 @@ var rockButton = document.getElementById ('rock')
 var paperButton = document.getElementById('paper')
 var scissorsButton = document.getElementById('scissors')
 var userInput
+var resultHouse = document.getElementById('results')
+var computerHouse = document.getElementById('computer-choice')
+var userHouse = document.getElementById('user-choice')
+
 rockButton.onclick = function(){
+
   userInput = ('rock')
-  alert(compare(userInput, computerInput));
+  var computerChoice = choose()
+  resultHouse.innerHTML = compare(userInput, computerChoice);
+  computerHouse.innerHTML = `I chose ${computerChoice}`
+  userHouse.innerHTML = `You chose ${userInput}`
+  // userHouse.innerHTML = 'User: ' + userInput
+  // alert(compare(userInput, computerInput));
 }
 
 paperButton.onclick = function(){
   userInput = ('paper')
-  alert(compare(userInput, computerInput));
+  var computerChoice = choose()
+  resultHouse.innerHTML = compare(userInput, computerChoice);
+  computerHouse.innerHTML = `I chose ${computerChoice}`
+  userHouse.innerHTML = `You chose ${userInput}`
+  // alert(compare(userInput, computerInput));
 }
 scissorsButton.onclick = function(){
   userInput = ('scissors')
-  alert(compare(userInput, computerInput));
+  var computerChoice = choose()
+  resultHouse.innerHTML = compare(userInput, computerChoice);
+  computerHouse.innerHTML = `I chose ${computerChoice}`
+  userHouse.innerHTML = `You chose ${userInput}`
+
+  // alert(compare(userInput, computerInput));
 }
 
 // var userInput = 0;
-var computerInput = Math.random() * 100
-if (computerInput < 33) {
-  computerInput = 'rock'
+function choose () {
+  var computerInput = Math.random() * 100
+  if (computerInput < 33) {
+    return 'rock'
+  }
+  else if (computerInput > 66) {
+    return "paper"
+  }
+  else {return 'scissors'}
 }
-else if (computerInput > 66) {
-  computerInput = "paper"
-}
-else {computerInput = 'scissors'}
 
 function compare (user, computer){
   var result
@@ -52,6 +73,3 @@ function compare (user, computer){
   }
   return result
 }
-
-console.log(userInput);
-console.log(computerInput);

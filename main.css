@@ -1,0 +1,17 @@
+body {
+font-family: 'Lobster';
+font-size: 25px;
+background-color: lightsalmon;
+color: #fff;
+text-align: center;
+
+}
+
+a img {
+  width: 100px;
+  -webkit-filter: invert();
+}
+
+#image-container, h2 {
+  text-align: center;
+}
